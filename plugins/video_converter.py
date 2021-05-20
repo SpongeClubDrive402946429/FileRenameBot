@@ -126,10 +126,11 @@ async def convert_to_video(bot, update):
             # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             # try to upload file
             c_time = time.time()
+            filecaption = os.path.basename(the_real_download_location)
             await bot.send_video(
                 chat_id=update.chat.id,
                 video=the_real_download_location,
-                caption=f"<b>{the_real_download_location}</b>",
+                caption=f"<b>{filecaption}</b>",
                 duration=duration,
                 width=width,
                 height=height,
